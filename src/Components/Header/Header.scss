@@ -1,0 +1,25 @@
+.header {
+  background-color: rgb(109, 8, 8);
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    color: white;
+  }
+
+  &__nav {
+    display: flex;
+    text-align: center;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 1rem;
+  color: white;
+}
