@@ -1,6 +1,27 @@
+import axios from "axios";
 import "./Application.scss";
+import { useEffect, useState } from "react";
 
 export default function Application() {
+  const [applications, setApplications] = useState(null);
+  const [error, setError] = useState(false);
+
+  const fetchApplications = async () => {
+    try {
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/applications`
+      );
+      setApplications(data);
+      console.log(data);
+    } catch (error) {
+      setError(true);
+    }
+  };
+
+  useEffect(() => {
+    fetchApplications();
+  }, []);
+
   return (
     <>
       <div className="application">
